@@ -12,6 +12,7 @@
         "doctrine/doctrine-fixtures-bundle": "^4.3",
         "doctrine/doctrine-migrations-bundle": "^3.7",
         "doctrine/orm": "^3.5",
+        "fakerphp/faker": "^1.24",
         "incenteev/hashed-asset-bundle": "^1.5",
         "phpdocumentor/reflection-docblock": "^5.6",
         "phpstan/phpdoc-parser": "^2.3",
