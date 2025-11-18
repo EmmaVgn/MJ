@@ -1,17 +1,68 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="fr">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<meta name="description" content=" Aromielis, apicultrice spécialisée dans la vente d'huiles essentielles, de produits de la ruche, de miels, nougats et hydrolats. Nous cultivons des plantes médicinales et proposons des produits naturels de qualité issus du Lot-et-Garonne.">
+		<meta name="keywords" content="Aromielis, huiles essentielles, produits de la ruche, miels, nougats, hydrolats, apicultrice, plantes médicinales, Lot-et-Garonne, produits naturels, soins à base de plantes">
+		<meta name="author" content="Aromielis">
+		<meta
+		name="robots" content="index, follow">
+		<!-- Permet aux moteurs de recherche d'indexer et suivre les liens -->
+
+		<title>
+			{% block title %}
+				Aromielis | Huiles essentielles et produits de la ruche
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+
+		<!-- Open Graph (OG) pour améliorer le partage sur les réseaux sociaux -->
+		<meta property="og:title" content="Aromielis| Huiles essentielles et produits de la ruche">
+		<meta property="og:description" content="Découvrez les produits naturels d'Aromielis : huiles essentielles, miels, nougats, et hydrolats, cultivés par Aromielis, apicultrice dans le Lot-et-Garonne.">
+		<meta
+		property="og:image" content="{{ asset('images/og-image.jpg') }}">
+		<!-- Image partagée sur les réseaux sociaux -->
+		<meta property="og:url" content="{{ app.request.uri }}">
+		<meta property="og:type" content="website">
+		<meta
+		property="og:locale" content="fr_FR">
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Aromielis | Huiles essentielles et produits de la ruche">
+		<meta name="twitter:description" content="Explorez les produits naturels de Aromielis : huiles essentielles, miels, nougats et hydrolats. Fabrication artisanale dans le Lot-et-Garonne.">
+		<meta name="twitter:image" content="{{ asset('images/og-image.jpg') }}">
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}">
+		{% endblock %}
+		{% block javascripts %}
+
+			{% block importmap %}
+				{{ importmap('app') }}
+
+
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			{% include "shared/_navbar.html.twig" %}
+			{% if carousel is defined %}
+				{% include "shared/_carousel.html.twig" %}
+			{% endif %}
+
+		</header>
+
+		<main>
+			{% block body %}{% endblock %}
+
+			{% include "shared/_footer.html.twig" %}
+		</main>
+	</body>
 </html>
