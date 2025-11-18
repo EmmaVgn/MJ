@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ path('app_home') }}">
 			<link rel="preload" href="{{ asset('images/Logo.png') }}" as="image">
-			<img src="{{ asset('images/Logo.png') }}" class="logo" alt="logo" height="auto">
+			<img src="{{ asset('images/Logo.png') }}" class="logo" alt="logo" style="width: 5%">
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -29,34 +29,34 @@
 					<a href="#" class="nav-link">
 						<i class="fas fa-shopping-cart"></i>
 						{#	Panier ({{ cartService.total | amount }})
-																							</a>#}
+																																			</a>#}
 					</li>
 					{#
-																							{% if app.user %}
-																								<li class="nav-item active">
-																									<a class="nav-link " href="{{ path('account') }}">Mon compte<span class="sr-only"></span>
-																									</a>
-																								</li>
-																			
-																								{% if is_granted('ROLE_ADMIN') %}
-																									<li class="nav-item">
-																										<a href="{{ path('#') }}" class="nav-link">Administration</a>
-																									</li>
-																								{% endif %}
-																								<li class="nav-item active">
-																									<a class="nav-link" href="{{ path('#') }}">Déconnexion</a>
-																								</li>
-																							{% else %}
-																								<li class="nav-item active">
-																									<a class="nav-link" href="{{ path('#') }}">Inscription<span class="sr-only"></span>
-																									</a>
-																								</li>
-																								<li class="nav-item active">
-																									<a class="nav-link" href="{{ path('#') }}">Connexion<span class="sr-only"></span>
-																									</a>
-																								</li>
-																							{% endif %}
-																			                #}
+																																	{% if app.user %}
+																																		<li class="nav-item active">
+																																			<a class="nav-link " href="{{ path('account') }}">Mon compte<span class="sr-only"></span>
+																																			</a>
+																																		</li>
+																													
+																																		{% if is_granted('ROLE_ADMIN') %}
+																																			<li class="nav-item">
+																																				<a href="{{ path('#') }}" class="nav-link">Administration</a>
+																																			</li>
+																																		{% endif %}
+																																		<li class="nav-item active">
+																																			<a class="nav-link" href="{{ path('#') }}">Déconnexion</a>
+																																		</li>
+																																	{% else %}
+																																		<li class="nav-item active">
+																																			<a class="nav-link" href="{{ path('#') }}">Inscription<span class="sr-only"></span>
+																																			</a>
+																																		</li>
+																																		<li class="nav-item active">
+																																			<a class="nav-link" href="{{ path('#') }}">Connexion<span class="sr-only"></span>
+																																			</a>
+																																		</li>
+																																	{% endif %}
+																													                #}
 				</li>
 			</ul>
 		</div>
